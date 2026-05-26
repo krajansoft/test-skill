@@ -10,7 +10,9 @@ function pozegnaj(imie) {
 function przeliczWiek(rokUrodzenia) {
   const biezacyRok = new Date().getFullYear();
   if (rokUrodzenia > biezacyRok) {
-    throw new RangeError(`Rok urodzenia (${rokUrodzenia}) nie może być w przyszłości.`);
+    throw new RangeError(
+      `Rok urodzenia (${rokUrodzenia}) nie może być w przyszłości.`
+    );
   }
   return biezacyRok - rokUrodzenia;
 }
@@ -18,7 +20,7 @@ function przeliczWiek(rokUrodzenia) {
 module.exports = { przywitaj, pozegnaj, przeliczWiek };
 
 if (require.main === module) {
-  console.log(przywitaj("Adam"));
-  console.log(pozegnaj("Adam"));
+  console.log(przywitaj('Adam'));
+  console.log(pozegnaj('Adam'));
   console.log(przeliczWiek(1990));
 }
